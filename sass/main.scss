@@ -1,0 +1,76 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+@import "components/feature-box";
+@import "components/card";
+@import "components/story";
+@import "components/bg-video";
+@import "components/form";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/footer";
+@import "layout/navigation";
+
+
+@import "pages/home";
+
+
+
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+
+
+/* Universal selector */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* we'll remove the box-sizing from here to user inheritance => body
+  box-sizing: border-box;*/
+  box-sizing: inherit;
+
+}
+
+/* Root font-size for rem size
+1 rem is the root font-size
+we place it to 10px :easier to compute;
+=> 1 rem = 10px */
+html {
+  /*font-size: 10px;
+  better practice is to place it in percentage
+  of default font-size of browser which is 16px
+  so if we put 100% => 16px
+  But here we want 10px => 10/16 * 100%
+  Defines what 1 rem is*/
+
+  font-size: 62.5%;
+}
+
+
+/* everything related to font is place in body selector */
+body {
+  box-sizing: border-box;
+}
+
+
+
+
+
+

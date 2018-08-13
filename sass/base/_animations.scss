@@ -1,0 +1,65 @@
+@keyframes moveInLeft{
+ /* initial state */
+ /* we want to go from the left to the right so first
+ negative value */
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+
+  }
+
+ /* 60% {
+    transform: rotate(120deg);
+  }*/
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+/* Final state */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
+@keyframes moveInRight{
+ /* initial state */
+ /* we want to go from the right to the left so first
+ negative value */
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+/* Final state */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
+@keyframes moveInBottom{
+ /* initial state */
+ /* we want to go from the right to the left so first
+ negative value */
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+
+  }
+
+
+/* Final state */
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
