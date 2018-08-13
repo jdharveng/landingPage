@@ -132,6 +132,7 @@
         top: 1rem;
     }
 
+    // 1e step to get the cross
     &__checkbox:checked + &__button &__icon {
         background-color: transparent;
     }
@@ -141,6 +142,7 @@
         transform: rotate(135deg);
     }
 
+    // we can use the "+" because it's an adjacent sibling
     &__checkbox:checked + &__button &__icon::after {
         top: 0;
         transform: rotate(-135deg);
