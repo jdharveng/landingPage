@@ -123,6 +123,7 @@
         &::after { top: .8rem; }
     }
 
+    // selection can happen like this as the icon is child element of __button
     &__button:hover &__icon::before {
         top: -1rem;
     }
