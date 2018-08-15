@@ -1,3 +1,4 @@
+
 .story {
   width: 75%;
   margin: 0 auto;
@@ -33,18 +34,26 @@
     // second - third : positioning
     // shape-outside: defines how the text flows outside
     // the shape
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
+
     // here we create the circle shape, starting
     // from a square
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
+
 
     // add some space around the circle
     // the best way to add some space around an object that's
     // floated is (not missing with margins) by using transform
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+     -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+  }
 
     @include respond(phone) {
       transform: translateX(-3rem) skewX(0);
