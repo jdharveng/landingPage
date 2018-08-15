@@ -38,14 +38,14 @@ Dark green: #28b485
 
 
 
-/* Universal selector */
+/* Universal selector
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   /* we'll remove the box-sizing from here to user inheritance => body
-  box-sizing: border-box;*/
+  box-sizing: border-box;
   box-sizing: inherit;
 
 }
@@ -53,26 +53,25 @@ Dark green: #28b485
 /* Root font-size for rem size
 1 rem is the root font-size
 we place it to 10px :easier to compute;
-=> 1 rem = 10px */
+=> 1 rem = 10px
 html {
   /*font-size: 10px;
   better practice is to place it in percentage
   of default font-size of browser which is 16px
   so if we put 100% => 16px
   But here we want 10px => 10/16 * 100%
-  Defines what 1 rem is*/
+  Defines what 1 rem is
 
   font-size: 62.5%;
 }
 
 
-/* everything related to font is place in body selector */
+/* everything related to font is place in body selector
 body {
   box-sizing: border-box;
 }
 
 
 
-
-
+*/
 
