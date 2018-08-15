@@ -4,9 +4,21 @@
   box-shadow: 0 3rem 6rem rgba($color-black, .1);
   background-color: rgba($color-white,.6);
   border-radius: 3px;
-  padding: 9rem;
+  padding: 6rem;
+  padding-left: 9rem;
   font-size: $default-font-size;
   transform: skewX(-12deg);
+
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 6rem;
+    padding-left: 9rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
 
   // but here we need to skew in the opposite
   // direction with the text
@@ -32,8 +44,11 @@
     // the best way to add some space around an object that's
     // floated is (not missing with margins) by using transform
     transform: translateX(-3rem) skewX(12deg);
-
     position: relative;
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
 
   }
 
@@ -47,6 +62,10 @@
 
   &__text {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
 
