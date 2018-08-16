@@ -1,12 +1,25 @@
+
 .story {
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba($color-black, .1);
   background-color: rgba($color-white,.6);
   border-radius: 3px;
-  padding: 9rem;
+  padding: 6rem;
+  padding-left: 9rem;
   font-size: $default-font-size;
   transform: skewX(-12deg);
+
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 6rem;
+    padding-left: 9rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
 
   // but here we need to skew in the opposite
   // direction with the text
@@ -21,19 +34,30 @@
     // second - third : positioning
     // shape-outside: defines how the text flows outside
     // the shape
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
+
     // here we create the circle shape, starting
     // from a square
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
+
 
     // add some space around the circle
     // the best way to add some space around an object that's
     // floated is (not missing with margins) by using transform
     transform: translateX(-3rem) skewX(12deg);
-
     position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+     -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+  }
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
 
   }
 
@@ -47,6 +71,10 @@
 
   &__text {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
 
